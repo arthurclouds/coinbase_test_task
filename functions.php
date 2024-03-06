@@ -6,9 +6,6 @@ function enqueue_custom_scripts() {
 add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
 function add_comment_callback() {
-	error_reporting(E_ALL);
-	ini_set('display_errors', 1);
-
     if (!isset($_POST['comment_nonce']) || !wp_verify_nonce($_POST['comment_nonce'], 'comment_nonce')) {
         die('Permission check failed');
     }
